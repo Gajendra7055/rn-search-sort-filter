@@ -1,9 +1,9 @@
 export interface IDataList {
   id: number;
-  title:string;
-  status:string;
-  createdAt:string;
-  author:string;
+  title: string;
+  status: string;
+  createdAt: string;
+  author: string;
 }
 export const DataList: IDataList[] = [
   {
@@ -41,4 +41,7 @@ export const DataList: IDataList[] = [
     createdAt: '2024-01-15',
     author: 'eve',
   },
-];
+ 
+
+    ];
+ 

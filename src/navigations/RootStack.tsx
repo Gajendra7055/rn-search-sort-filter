@@ -3,6 +3,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from '../screens/Login';
 import Dashboard from '../screens/Dashboard';
+import McqSection from '../screens/McqSection';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -14,7 +15,8 @@ export default function RootStack() {
   return (
     <Stack.Navigator options={{Headers: false}}>
       {/* <Stack.Screen name="Login" component={Login} /> */}
-      <Stack.Screen name="Dashboard" component={Dashboard} />
+      {/* <Stack.Screen name="Dashboard" component={Dashboard} /> */}
+      <Stack.Screen name="McqSection" component={McqSection} />
     </Stack.Navigator>
   );
 }
