@@ -5,8 +5,8 @@
  * @format
  */
 
-import { NavigationContainer } from '@react-navigation/native';
-import React, { useState } from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import React, {useState} from 'react';
 import {
   ScrollView,
   StatusBar,
@@ -26,28 +26,30 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import NoteForm from './src/components/NoteForm';
 import NoteList from './src/components/NoteList';
+import InfiniteScroll from './src/screens/InfiniteScroll';
 
 function App() {
-const [notes,setNotes] = useState<any>([]); 
-const addNote = (note:string)=> {
-  console.log('note',note);
-  
-  setNotes([...notes,{id:Date.now().toString(),text:note}])
-}
-const handleDeleteNote = (id: any) => {
-  setNotes(notes.filter((note: { id: any; }) => note.id !== id));
-}
+  const [notes, setNotes] = useState<any>([]);
+  const addNote = (note: string) => {
+    console.log('note', note);
+
+    setNotes([...notes, {id: Date.now().toString(), text: note}]);
+  };
+  const handleDeleteNote = (id: any) => {
+    setNotes(notes.filter((note: {id: any}) => note.id !== id));
+  };
   return (
     <NavigationContainer>
-     <SafeAreaView style={styles.container}>
-           <StatusBar barStyle="dark-content" />
-           {/* <View style={styles.content}>
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="dark-content" />
+        {/* <View style={styles.content}>
              <Text style={styles.title}>React Native Boilerplate</Text>
              <Text style={styles.subtitle}>Your starting point for a new project</Text>
            </View> */}
-           <NoteForm handleSetNote={addNote}/>
-           <NoteList notes={notes} deleteNote={handleDeleteNote}/>
-         </SafeAreaView>
+        {/* <NoteForm handleSetNote={addNote} />
+        <NoteList notes={notes} deleteNote={handleDeleteNote} /> */}
+        <InfiniteScroll/>
+      </SafeAreaView>
     </NavigationContainer>
   );
 }
